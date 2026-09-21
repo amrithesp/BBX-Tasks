@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+
+            animation: moveBox 2s infinite;
+        }
+
+        @keyframes moveBox{
+            0% {
+                transform: translateX(0);
+                background-color: antiquewhite;
+            }
+
+            50% {
+                transform: translateX(200px);
+                background-color: rgb(178, 108, 16);
+            }
+            100% {
+                transform: translateX(400px);
+                background-color: rgb(13, 8, 0);
+            }
+
+        }
+    </style>
+</head>
+<body>
+    
+<div class="box">Hello</div>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Registration Form</title>
+</head>
+<body>
+  <form action="/register" method="post" enctype="multipart/form-data">
+
+    <section>
+      <h1>Step 1: Personal Information</h1>
+
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" 
+             required minlength="2" maxlength="50" autocomplete="name"
+             aria-describedby="error-fullname" aria-invalid="false">
+
+      <div id="error-fullname" class="error" aria-live="polite">Name is required.</div>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required autocomplete="email">
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required 
+             pattern="[0-9]{10}" title="Enter a 10-digit phone number">
+    </section>
+
+    <section>
+      <h2>Step 2: Account Details</h2>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" 
+             required minlength="8" maxlength="20" autocomplete="new-password">
+
+      <fieldset>
+        <legend>Choose your role</legend>
+        <label><input type="radio" name="role" value="student" required> Student</label>
+        <label><input type="radio" name="role" value="teacher"> Teacher</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Interests</legend>
+        <label><input type="checkbox" name="interests" value="coding"> Coding</label>
+        <label><input type="checkbox" name="interests" value="music"> Music</label>
+        <label><input type="checkbox" name="interests" value="sports"> Sports</label>
+      </fieldset>
+    </section>
+
+    <section>
+      <h2>Step 3: Upload Profile Picture</h2>
+      <label for="profilepic">Profile Picture (PNG/JPEG, max 2MB)</label>
+      <input type="file" id="profilepic" name="profilepic" accept="image/png,image/jpeg" required>
+    </section>
+
+    <input type="hidden" name="form_id" value="registration_v1">
+
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>
+
